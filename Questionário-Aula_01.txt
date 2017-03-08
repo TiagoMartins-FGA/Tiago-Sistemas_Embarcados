@@ -25,4 +25,3 @@ Resposta: As arquiteturas mais conhecidas no curso de Engenharia Eletrônica sã
 
 Pergunta: Por quê usamos o Raspberry PI na disciplina, ao invés de outros system on chip?
 Resposta: Bom, analisando as caracteristicas da raspberry PI é possível perceber o quanto ela é robusta em relação as outras a nível de processamento do dados, de sistema, é fundamental para um estudante de Engenharia Eletrônica ter o conhecimento de como trabalhar com ela até mesmo pra usar em próximas disciplinas e na vida profissional.
-
