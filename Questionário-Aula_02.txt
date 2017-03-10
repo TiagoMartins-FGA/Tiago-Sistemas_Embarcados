@@ -24,6 +24,8 @@ Os botões que apresentam o que foi escrito anteriormente são teclas "para cima
       O comando "man" é o comando utilisado para obter mais informações sobre um comando.
   
   (b) Apresentar uma lista com os arquivos dentro de uma pasta.
+      O comando "ls" mostra os arquivos e pastas do diretório, para apresentar os arquivos e pastas de um diretório usa-se o comando "ls-l".
+
   (c) Apresentar o caminho completo da pasta.
       O comando "pwd" é quem vai apresentar o caminho completo da pasta. 
   
@@ -43,11 +45,23 @@ Os botões que apresentam o que foi escrito anteriormente são teclas "para cima
       O comando para copiar pastas é o "cp", o usuário deve escrever "cp/diretório que está/diretório que quer enviar.
   
   (i) Copiar pastas.
+      O comando "cp -r /diretório que está/ diretório que deseja enviar" é usado para copiar diretórios.
+
   (j) Mover arquivos.
+      O comando para mover arquivos é o "mv".
+
   (k) Mover pastas.
+      O comando para mover pastas é o "mv teste1/* /home/usuario/www/teste2", aqui movemos todo o conteúdo da pasta "test1" e enviamos para a pasta "teste2".
+
   (l) Renomear pastas.
+      O comando "rename" renomea arquivos, basta colocar "rename nomedoarquivo.txt nomedesejado.txt".
+
   (m) Apresentar o conteúdo de um arquivo.
+      O comando "ls -l /etc/hosts" apresenta o coneteúdo de um arquivo.
+
   (n) Apresentar o tipo de um arquivo.
+      O comando "ls -l" apresenta o tipo de arquivo com uma lista dos arquivos do diretório.
+
   (o) Limpar a tela do terminal.
       O comando "clear" é usado para limpar a tela do terminal. 
   
@@ -55,7 +69,15 @@ Os botões que apresentam o que foi escrito anteriormente são teclas "para cima
       Para encontrar ocorrências de palavras é usado os comandos "ls -la grep palavras-chave".
   
   (q) Ordenar informações em um arquivo-texto.
+      O comando "sort" ordena as informações em um arquivo-texto.
+
   (r) Substituir ocorrências de palavras-chave em um arquivo-texto.
+      O comando "grep" é utilizado para a substituição de palavras-chave em um arquivo-texto.
+
   (s) Conferir se dois arquivos são iguais.
+      O comando "diff" verifica se dois arquivos são iguais.
+
   (t) Escrever algo na tela.
+      Para escrever algo na tela usando o terminal é preciso abrir o terminal, podendo-ser feito através de Aplicações/Acessórios/Terminal. Quando precisar usar comandos como usuario avançado root, dê o comando sudo su e digite sua senha de usuario. 
+
 
