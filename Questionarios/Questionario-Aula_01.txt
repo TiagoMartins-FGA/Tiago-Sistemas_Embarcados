@@ -1,0 +1,27 @@
+Questionário_07/03/2017-Sistemas_Embarcados
+
+Pergunta: O que são sistemas embarcados?
+Resposta: São sistemas computacionais nos quais executa uma função específica, no caso, tem um microprocessador como base. São sistemas mais simples que o de um computador básico, porém, por serem de uso específico os torna mais seguro e mais eficiente para a função que serão utilizados.
+
+Pergunta: O que são microprocessadores?
+Resposta: São dispositivos programáveis que recebem dados como entrada, esses dados são processados em relação as instruções armazenadas em sua memória e os resultados são acessados como saída.
+
+Pergunta: Apresente aplicações de sistemas embarcados: 
+		Para a indústria automotiva:
+Resposta: De acordo com o site: https://www.embarcados.com.br/onde-aprender-sobre-sistemas-embarcados-automotivos/, o autor descreve alguns exemplos de aplicações na indústria automotiva, são alguns dos diversos dispositivos automotivos, são eles: Redes de comunicação embarcada como CAN e LIN, sistemas de GPS e navegação. controle de motor e injeção eletrônica, alarmes, entre outros.
+
+		Para eletrodomésticos:
+Resposta: Há inúmeras aplicações de sistemas embarcados para eletrodomésticos sendo elas: Controladores eletrônicos de eletrodomésticos, como fornos microondas, máquinas de lavar e também dos refrigeradores e aparelhos de ar condicionado mais modernos, aparelhos de TV com controle remoto, CD players, DVD players e Blue-Ray Disc players, alarmes programáveis para residências, videogames, receptores de TV por satélite e de TV por cabo coaxial, televisores digitais com telas a LCD ou plasma e monitores de computador de LCD, dentre outros.
+Pesquisa baseada no estudo realizado pela Universidade Federal do Paraná no site: http://www.eletrica.ufpr.br/graduacao/noturno/embarcados.html
+
+		Para automação industrial:
+Resposta: No ramo industrial os sistemas embarcados foram fortemente implmentados, segundo o site: https://www.embarcados.com.br/sistemas-embarcados-na-automacao-industrial/ é mostrado os principais sistemas embarcados encontrados no mercado, no qual mostrarei apenas três com algumas aplicações. São eles CLP, Computador de Vazão, IHM.
+		CLP/PLC (Controlador Lógico Programável) recebe sinais de diversos sensores e medidores, compara esses sinais com seu programa e com os valores de set-point introduzidos pelo usuário e aciona atuadores como motores e válvulas.
+		Computador de Vazão é um sistema embarcado dedicado a análise de informações de medição de vazão de líquidos e gases dos processos industriais.
+		IHM monitora os dados durante a operação da máquina ou processo.
+
+Pergunta: Cite arquiteturas possíveis e as diferenças entres elas. 
+Resposta: As arquiteturas mais conhecidas no curso de Engenharia Eletrônica são: Arduino, MSPs , Raspiberry PI. As diferenças entre elas estão na capacidade de processamento de dados, no custo de energia, na capacidade de armazenamento de dados e principalmente no custo. A escolha de uma em relação a outra depende muito da aplicação que será utilizada.
+
+Pergunta: Por quê usamos o Raspberry PI na disciplina, ao invés de outros system on chip?
+Resposta: Bom, analisando as caracteristicas da raspberry PI é possível perceber o quanto ela é robusta em relação as outras a nível de processamento do dados, de sistema, é fundamental para um estudante de Engenharia Eletrônica ter o conhecimento de como trabalhar com ela até mesmo pra usar em próximas disciplinas e na vida profissional.
