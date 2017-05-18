@@ -1,8 +1,36 @@
+Prática-Aula_04.txt
+
 Data: 21/03/2017
 
 Para todas as questões, compile-as com o gcc e execute-as via terminal.
 
 1. Crie um código em C para escrever "Ola mundo!" em um arquivo chamado 'ola_mundo.txt'.
+
+//exercicio1.c
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, const char *argv[]) {
+	
+	FILE *fp;
+	char string[100];
+	int i;
+	fp = fopen("arquivo.txt", "w");
+	if(!fp)
+	{
+	
+	/* Arquivo ASCII, para escrita */
+	printf("Erro na abertura do arquivo");
+	exit(0);  }
+	printf("Entre com uma string: ");
+	gets(string);
+	for(i=0; string[i]; i++)
+		putc(string[i], fp);
+	
+	printf("\n\n");
+	fclose (fp);
+	return 0;
+}
+
 
 2. Crie um código em C que pergunta ao usuário seu nome e sua idade, e escreve este conteúdo em um arquivo com o seu nome e extensão '.txt'. Por exemplo, considerando que o código criado recebeu o nome de 'ola_usuario_1':
 	$ ./ola_usuario_1
@@ -13,6 +41,47 @@ Para todas as questões, compile-as com o gcc e execute-as via terminal.
 	$ Idade: 30 anos
 	$
 
+//exercicio2.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, const char *argv[]) {
+	
+	FILE *fp;
+	char str1[100],str2[100], str3[100], str4[100];
+	int i, j;
+	
+	fp = fopen("arquivo2.txt", "w");
+		printf ("Digite seu nome: ");
+		gets (str1);
+		printf ("Digite sua idade: ");
+		gets (str3);
+		strcpy (str2,"Nome: ");
+		strcat (str2,str1);	// str2 armazena caracteres de str1
+		//printf ("\n\n%s\n\n",str2);
+
+	for(i=0; str2[i]; i++){
+
+		putc(str2[i], fp);
+	}
+
+
+	
+	strcpy (str4,"\nIdade: ");
+	strcat (str4,str3);
+	//printf ("\n\n%s\n\n",str4);
+
+	for(j=0; str4[j]; j++){
+
+		putc(str4[j], fp);
+	}
+	putc('\n', fp);
+
+	fclose(fp);
+	return(0);
+}
+
 3. Crie um código em C que recebe o nome do usuário e e sua idade como argumentos de entrada (usando as variáveis argc e *argv[]), e escreve este conteúdo em um arquivo com o seu nome e extensão '.txt'. Por exemplo, considerando que o código criado recebeu o nome de 'ola_usuario_2':
 	$ ./ola_usuario_2 Eu 30
 	$ cat Eu.txt
@@ -20,11 +89,62 @@ Para todas as questões, compile-as com o gcc e execute-as via terminal.
 	$ Idade: 30 anos
 	$
 
+//exercicio3.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+    int main (int argc, const char *argv[]){
+   
+        FILE *fp;
+        int i, j;
+
+        fp = fopen("arquivo2.txt", "w"); //Criar arquivo
+        	/*Vai pegar o que eu escrever no endereço do 
+        vetor argv[1] e argv[2] e vai imprimir na tela nome e idade*/ 
+            printf("Nome: %s \nIdade: %s anos\n", argv[1], argv[2] );
+
+        fclose (fp);
+        return(0);
+}
+ 
+
 4. Crie uma função que retorna o tamanho de um arquivo, usando o seguinte protótipo:
 
 	int tam_arq_texto(char *nome_arquivo);
 
 Salve esta função em um arquivo separado chamado 'bib_arqs.c'. Salve o protótipo em um arquivo chamado 'bib_arqs.h'. Compile 'bib_arqs.c' para gerar o objeto 'bib_arqs.o'.
+
+//função int tam_arq_texto(char *nome_arquivo);
+
+//bib_arqs.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "bib_arqs.h"
+
+
+
+int tam_arq_texto(char *nome_arquivo)
+{
+
+	int i = 0;
+	char c;
+	FILE *fp;
+
+	fp = fopen(nome_arquivo,"r"); 
+	while((c = getc(fp) ) != EOF)
+	{ 
+		i = i++;
+	}
+
+	fclose(fp);
+    	return (i);
+ }
+
+//bib_arqs.h
+int tam_arq_texto(char *nome_arquivo);
+
+
 
 5. Crie uma função que lê o conteúdo de um arquivo-texto e o guarda em uma string, usando o seguinte protótipo:
 
@@ -42,4 +162,19 @@ Repare que o conteúdo do arquivo é armazenado no vetor 'conteudo[]'. Ou seja, 
 	$ echo Ola mundo cruel! Ola universo ingrato! > ola.txt
 	$ ./busca_e_conta Ola ola.txt
 	$ 'Ola' ocorre 2 vezes no arquivo 'ola.txt'.
-	$
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "bib_arqs.h"
+
+int main(int argc, char *argv[]){
+       
+	int c;
+	
+
+	c = tam_arq_texto(argv[1]);
+       	printf("   %d \n", c);	
+	
+    	return (0);
+   }
