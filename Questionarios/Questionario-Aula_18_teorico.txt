@@ -2,10 +2,24 @@ Data: 16/05/2017
 
 1. Cite as vantagens e desvantagens das comunicação serial I2C.
 
+Na comunicação I2C, são utilizados dois fios para transmissão de dados entre o microcontrolador e um segundo dispositivo. As conexão são feitas por meio dos pinos SDA (Serial Data) e SCL (Serial Clock).
+Cada dispositivo I2C tem um endereço fixo para se comunicar com o microcontrolador e pode ser configurado para transmitir ou receber dados. Assim, tanto a linha SDA como a SCL são bidirecionais, com os dispositivos alternando seu estado entre mestre e escravo.
+(pesquisa encontrado em: http://buildbot.com.br/blog/interfaces-de-comunicacao-onewire-spi-i2c/)
+
+Vantagens:
+	Umas das vanteagens da comunicação I2C é a ligação com o microcontrolador é realizada utilizando apenas dois fios, o que possibilita a comunicação bidirecional.
+Desvantagens:
+	Uma das desvantagens da comunicação I2C é que ela não é tão rápida quanto a comunicação SPI e em algus casos pode ter conflitos de endereçamento, pois os dispositivos usam o mesmo barramento.
+
+
 2. Considere o caso em que a Raspberry Pi deve receber leituras analógico/digitais de um MSP430, e que a comunicação entre os dois é I2C. É tecnicamente possível que o MSP430 mande os resultados da conversão A/D a qualquer hora, ou ele deve aguardar a Raspberry Pi fazer um pedido ao MSP430? Por quê?
+
+	O MSP430 irá aguardar a Raspberry Pi fazer um pedido, pois é uma comunicação entre um mestre (a Raspberry Pi) e o escravo (o MSP430). O MSP430 só realizará alguma função quando a Raspberry Pi mandar ele fazer.
 
 3. Se o Raspberry Pi tiver de se comunicar com dois dispositivos via I2C, como executar a comunicação com o segundo dispositivo?
 
+	A comunicação será realizada da mesma forma, usando os mesmos dois barramentos (fios) em paralelo aos dois escravos.
+	É importante que tanto o SDA como SCL sejam mantidas em nível alto quando não há transmissão de dados, para isso utiliza-se resistores pull-up ligados ao barramento. Sem eles, o barramento não fica em estado “pronto” para enviar e receber dados.
 
 
 
