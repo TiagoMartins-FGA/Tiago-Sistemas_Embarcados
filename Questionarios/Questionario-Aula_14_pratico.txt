@@ -2,7 +2,70 @@ Data: 25/04/2017
 
 1. Escreva um código em C para gerar uma onda quadrada de 1 Hz em um pino GPIO do Raspberry Pi.
 
+#include "gpio_sysfs.h"
+#include <unistd.h>
+
+//Compile junto com o arquivo gpio_sysfs.c
+int main()
+{
+	int pin=4;
+	
+	signal(SIGINT, ctrl_c);
+
+	if(setGPIO_Out(pin))
+		return -1;
+	while(1){
+	if (GPIO_Write(pin,1))
+		return 1;
+	sleep(1);
+	if (GPIO_Write(pin,0))
+		return 3;
+	usleep(freq);
+	}
+
+	return 0;
+}
+
 2. Generalize o código acima para qualquer frequência possível.
+
+//Ex3.c
+#include "gpio_sysfs.h"
+#include <unistd.h>
+#include <signal.h>
+#include <stdio.h>
+int pin=4;
+
+void ctrl_c(void)
+{
+	printf("\nFechando o programa\n");
+	if(unsetGPIO(pin))
+		return 2;
+	exit(-1);
+}
+//Compile junto com o arquivo gpio_sysfs.c
+int main()
+{
+	signal(SIGINT, ctrl_c);
+	int freq;
+
+	printf("Digite uma frequencia: ");
+	scanf("%d", &freq);
+
+	freq = 500000/freq;
+
+	if(setGPIO_Out(pin))
+		return -1;
+	while(1){
+	if (GPIO_Write(pin,1))
+		return 1;
+	usleep(freq);
+	if (GPIO_Write(pin,0))
+		return 3;
+	usleep(freq);
+	}
+
+	return 0;
+}
 
 3. Crie dois processos, e faça com que o processo-filho gere uma onda quadrada, enquanto o processo-pai lê um botão no GPIO, aumentando a frequência da onda sempre que o botão for pressionado. A frequência da onda quadrada deve começar em 1 Hz, e dobrar cada vez que o botão for pressionado. A frequência máxima é de 64 Hz, devendo retornar a 1 Hz se o botão for pressionado novamente.
 
